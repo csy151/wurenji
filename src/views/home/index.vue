@@ -1,7 +1,7 @@
 <template>
   <div class="app-container home">
-    <el-row :gutter="20">
-      <el-col :span="18">
+    <div class="main-content-grid">
+      <div class="left-section">
         <el-row :gutter="20">
           <el-col :span="13">
             <home-user-task-stats />
@@ -11,11 +11,12 @@
           </el-col>
         </el-row>
         <sku-sale-collect-chart />
-      </el-col>
-      <el-col :span="6">
+      </div>
+      <div class="right-section">
         <sku-sale-rank-chart />
-      </el-col>
-    </el-row>
+      </div>
+    </div>
+
     <el-row :gutter="20" style="margin-top: 20px">
       <el-col :span="14">
         <partner-node-collect-chart />
@@ -113,7 +114,7 @@ import AbnormalEquipmentTable from './components/abnormal-equipment-table.vue'
       font-size: 16px;
       font-weight: 600;
       color: #333;
-      
+
     }
     .sub-title {
       margin-left: 10px;
@@ -134,6 +135,43 @@ import AbnormalEquipmentTable from './components/abnormal-equipment-table.vue'
     min-height: 538px;
     background: #fff;
     border-radius: 20px;
+  }
+  /* 销售热榜定位容器 */
+  .rank-chart-container {
+    // 使用相对定位作为绝对定位的参照
+    position: relative;
+    // 确保容器占据空间
+    min-height: 538px;
+    // 设置与左侧相同的高度
+    height: calc((100vh - 120px) * 0.6 - 20px);
+    // 销售热榜绝对定位样式
+    .sku-sale-rank {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  /* 使用grid布局来精确控制左右两侧的对齐 */
+  .main-content-grid {
+    display: grid;
+    grid-template-columns: 18fr 6fr;
+    gap: 20px;
+    align-items: start; /* 默认顶部对齐 */
+  }
+
+  .left-section {
+    /* 左侧内容不需要特殊设置 */
+
+  }
+
+  .right-section {
+    /* 右侧销售热榜区域设置与左侧相同的高度 */
+    height:100%;
+    //height: calc((100vh - 120px) * 0.6 + 120px);
+    display: flex;
+    flex-direction: column;
   }
 }
 </style>

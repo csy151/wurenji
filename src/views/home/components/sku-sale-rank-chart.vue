@@ -3,7 +3,7 @@
     <!-- TODO: 分辨大怎么展示问UI -->
     <div class="header">
       <div class="title">
-        商品热榜<span class="sub-title">{{ start }} ~ {{ end }}</span>
+        销售热榜<span class="sub-title">{{ start }} ~ {{ end }}</span>
       </div>
     </div>
     <div class="body">
@@ -32,61 +32,61 @@ import dayjs from 'dayjs';
 const skuSaleRank = ref([
     {
         "skuId": "0",
-        "skuName": "茉莉花茶",
+        "skuName": "5寸穿越机",
         "count": 820,
         "amount": 0
     },
     {
         "skuId": "0",
-        "skuName": "星巴克",
+        "skuName": "7寸穿越机",
         "count": 762,
         "amount": 0
     },
     {
         "skuId": "0",
-        "skuName": "可口可乐",
+        "skuName": "工业无人机",
         "count": 749,
         "amount": 0
     },
     {
         "skuId": "0",
-        "skuName": "怡宝",
+        "skuName": "超轻固定翼",
         "count": 742,
         "amount": 0
     },
     {
         "skuId": "0",
-        "skuName": "100橙汁自然纯",
+        "skuName": "配件套装",
         "count": 718,
         "amount": 0
     },
     {
         "skuId": "0",
-        "skuName": "青梅绿茶",
+        "skuName": "飞机电池",
         "count": 714,
         "amount": 0
     },
     {
         "skuId": "0",
-        "skuName": "统一阿萨姆奶茶",
+        "skuName": "飞机翅膀",
         "count": 700,
         "amount": 0
     },
     {
         "skuId": "0",
-        "skuName": "康师傅冰红茶",
+        "skuName": "电机",
         "count": 673,
         "amount": 0
     },
     {
         "skuId": "0",
-        "skuName": "泡面1",
+        "skuName": "电池排线",
         "count": 422,
         "amount": 0
     },
     {
         "skuId": "0",
-        "skuName": "苹果手机",
+        "skuName": "飞机手控",
         "count": 348,
         "amount": 0
     }
@@ -100,8 +100,9 @@ const end = dayjs().endOf('day').format('YYYY.MM.DD');
 .sku-sale-rank {
   display: flex;
   flex-direction: column;
-  height: calc((100vh - 120px) * 0.6);
-  min-height: 538px;
+  //height: calc((100vh - 120px) * 0.6);
+  flex: 1;
+  //hight:150%;
   background: #FFFFFF;
   border-radius: 20px;
 
